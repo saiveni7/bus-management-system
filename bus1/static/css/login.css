@@ -1,0 +1,89 @@
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f5f5f5;
+}
+
+/* NAVBAR */
+nav{
+  background:black;
+  padding:12px;
+}
+
+nav a{
+  color:white;
+  margin-right:20px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:yellow;
+}
+
+/* CENTER AREA */
+.main-container{
+  height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* FLEX CONTAINER */
+.box-container{
+  display:flex;
+  gap:40px;
+}
+
+/* BOX DESIGN */
+.box{
+  width:300px;
+  padding:20px;
+  border:2px solid black;
+  border-radius:10px;
+  background:white;
+}
+
+/* TITLE */
+.box h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+/* INPUT */
+.box input{
+  width:100%;
+  padding:8px;
+  margin:8px 0;
+  border:1px solid gray;
+  border-radius:5px;
+}
+
+/* BUTTON */
+.box button{
+  width:100%;
+  padding:10px;
+  background:blue;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.box button:hover{
+  background:darkblue;
+}
+
+/* SIGNUP */
+.signup{
+  text-align:center;
+  margin-top:10px;
+}
+
+.signup a{
+  color:blue;
+  text-decoration:none;
+}
+
+.signup a:hover{
+  text-decoration:underline;
+}

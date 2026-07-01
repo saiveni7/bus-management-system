@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Bus</title>
+    <link rel="stylesheet" href="{% static 'css/book_bus.css' %}">
+</head>
+<body>
+
+<div class="booking-container">
+    <h2>Book Your Seat</h2>
+
+    <div class="booking-info">
+        <p><strong>Bus Name:</strong> {{ bus.bus_name }}</p>
+        <p><strong>From:</strong> {{ bus.source }}</p>
+        <p><strong>To:</strong> {{ bus.dest }}</p>
+        <p><strong>Date:</strong> {{ bus.date }}</p>
+        <p><strong>Time:</strong> {{ bus.time }}</p>
+        <p><strong>Price per Seat:</strong> ₹ {{ bus.price }}</p>
+        <p><strong>Available Seats:</strong> {{ bus.rem }}</p>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Number of Seats:</label>
+        <input type="number" name="seats" min="1" max="{{ bus.rem }}" required>
+
+        <button type="submit" class="book-btn">Confirm Booking</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* book_bus.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+.booking-container {
+    width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.booking-container h2 {
+    text-align: center;
+}
+
+.booking-info {
+    margin-bottom: 20px;
+}
+
+.booking-info p {
+    margin: 5px 0;
+}
+
+.booking-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.book-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.book-btn:hover {
+    background: #218838;
+}

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/customer_dashboard.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Customer Dashboard</h2>
+
+    <!-- SEARCH FORM -->
+    <div class="search-box">
+        <form method="GET" action="{% url 'search_bus' %}">
+            <input type="text" name="source" placeholder="From" required>
+            <input type="text" name="dest" placeholder="To" required>
+            <input type="date" name="date" required>
+            <button type="submit">Search Buses</button>
+        </form>
+    </div>
+
+    <!-- MY BOOKINGS -->
+    <h3>My Bookings</h3>
+
+    <table>
+        <tr>
+            <th>Bus</th>
+            <th>Route</th>
+            <th>Date</th>
+            <th>Seats</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.bus.bus_name }}</td>
+            <td>{{ booking.bus.source }} → {{ booking.bus.dest }}</td>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.seats_booked }}</td>
+            <td>₹ {{ booking.total_price }}</td>
+            <td>{{ booking.status }}</td>
+            <td>
+                {% if booking.status == "BOOKED" %}
+                <a href="{% url 'cancel_booking' booking.booking_id %}">
+                    <button class="cancel-btn">Cancel</button>
+                </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No bookings found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

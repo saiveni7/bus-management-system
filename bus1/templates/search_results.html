@@ -1,0 +1,35 @@
+{% for bus in buses %}
+<div class="bus-card">
+
+  <div class="bus-left">
+      <div class="bus-name">{{ bus.bus_name }}</div>
+      <div class="bus-type">AC Sleeper</div>
+
+      <div class="bus-time">
+          <div>
+              <strong>{{ bus.time }}</strong><br>
+              {{ bus.source }}
+          </div>
+
+          <div class="duration">
+              {{ bus.date }}
+          </div>
+
+          <div>
+              <strong>Arrival</strong><br>
+              {{ bus.dest }}
+          </div>
+      </div>
+  </div>
+
+  <div class="bus-right">
+      <div class="price">₹ {{ bus.price }}</div>
+      <div class="seats-left">{{ bus.rem }} Seats Left</div>
+
+      <a href="{% url 'book_bus' bus.bus_id %}">
+          <button class="select-btn">Select Seats</button>
+      </a>
+  </div>
+
+</div>
+{% endfor %}

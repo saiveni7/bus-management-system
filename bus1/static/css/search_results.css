@@ -1,0 +1,85 @@
+/* search_results.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.bus-card {
+    background: white;
+    margin: 20px auto;
+    width: 85%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bus-left {
+    width: 70%;
+}
+
+.bus-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bus-type {
+    color: gray;
+    font-size: 14px;
+}
+
+.bus-time {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.bus-time div {
+    margin-right: 40px;
+}
+
+.duration {
+    color: #888;
+    font-size: 14px;
+}
+
+.rating {
+    background: #28a745;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.bus-right {
+    text-align: right;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.seats-left {
+    color: #ff5a5f;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.select-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #ff5a5f;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.select-btn:hover {
+    background: #e04848;
+}

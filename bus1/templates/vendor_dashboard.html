@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/vendor_dashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <h2>Vendor Dashboard</h2>
+
+    <div class="top-bar">
+        <a href="{% url 'add_bus' %}">
+            <button class="add-btn">+ Add Bus</button>
+        </a>
+    </div>
+
+    <table>
+        <tr>
+            <th>Bus Name</th>
+            <th>Route</th>
+            <th>Date</th>
+            <th>Seats</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for bus in buses %}
+        <tr>
+            <td>{{ bus.bus_name }}</td>
+            <td>{{ bus.source }} → {{ bus.dest }}</td>
+            <td>{{ bus.date }}</td>
+            <td>{{ bus.rem }} / {{ bus.nos }}</td>
+            <td>₹ {{ bus.price }}</td>
+            <td>
+                <a href="{% url 'update_bus' bus.bus_id %}">
+                    <button class="edit-btn">Edit</button>
+                </a>
+                <a href="{% url 'delete_bus' bus.bus_id %}">
+                    <button class="delete-btn">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No buses added yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

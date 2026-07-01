@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Bus</title>
+    <link rel="stylesheet" href="{% static 'css/add_bus.css' %}">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Add New Bus</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text" name="bus_name" placeholder="Bus Name" required>
+
+        <input type="text" name="source" placeholder="Source" required>
+
+        <input type="text" name="dest" placeholder="Destination" required>
+
+        <input type="number" name="nos" placeholder="Total Seats" required>
+
+        <input type="number" name="price" placeholder="Ticket Price" required>
+
+        <input type="date" name="date" required>
+
+        <input type="time" name="time" required>
+
+        <button type="submit">Add Bus</button>
+    </form>
+</div>
+
+</body>
+</html>
